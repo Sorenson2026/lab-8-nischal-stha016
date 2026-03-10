@@ -8,7 +8,7 @@
 using namespace std;
 
 // Function to process a sequence of integers and display statistics
-int main() 
+int main()
 {
 	int count = 0;
 	int min = 10;
@@ -22,14 +22,17 @@ int main()
 
 	// Prompt the user for input and process the integers
 	cout << "Enter an integer (0 to quit): ";
-	while (cin >> value && value != 0) // Validate the input and update statistics
+	cin >> value;
+	while (value < 0 || value > 10) // Validate the first input
 	{
-		// Check if the input is within the valid range
-		if (value < 1 || value > 10) 
-		{
-			cout << "Invalid input. Please enter an integer between 1 and 10 (0 to quit): ";
-			
-		}
+		cout << "Invalid input. Please enter an integer between 1 and 10 (0 to quit): ";
+		cin >> value;
+	}
+
+
+
+	while (value != 0) // Validate the input and update statistics
+	{
 		// Update the count
 		count++;
 		// Update the sum
@@ -46,6 +49,13 @@ int main()
 		}
 		// Prompt the user for the next input
 		cout << "Enter an integer (0 to quit): ";
+		cin >> value;
+		while (value < 0 || value > 10) // Validate the first input
+		{
+			cout << "Invalid input. Please enter an integer between 1 and 10 (0 to quit): ";
+			cin >> value;
+		}
+
 	}
 	// Display the results if at least one valid integer was entered
 	if (count > 0) 
