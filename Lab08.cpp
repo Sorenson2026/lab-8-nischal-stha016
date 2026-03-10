@@ -30,16 +30,21 @@ int main()
 			cout << "Invalid input. Please enter an integer between 1 and 10 (0 to quit): ";
 			
 		}
+		// Update the count
 		count++;
+		// Update the sum
 		sum += value;
+		// Update the minimum
 		if (value < min) 
 		{
 			min = value;
 		}
+		// Update the maximum
 		if (value > max) 
 		{
 			max = value;
 		}
+		// Prompt the user for the next input
 		cout << "Enter an integer (0 to quit): ";
 	}
 	// Display the results if at least one valid integer was entered
